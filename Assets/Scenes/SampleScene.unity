@@ -1799,16 +1799,15 @@ MonoBehaviour:
     - {fileID: 1680521518}
     - {fileID: 1680521517}
     - {fileID: 1680521516}
+    currentHair: {fileID: 1680521522}
     nextBTN: {fileID: 1049954545}
     prevBTN: {fileID: 1807020284}
-    currentIndex: 0
   clotheTypes:
     clothesParts:
     - {fileID: 1464849109}
     - {fileID: 1464849108}
     nextBTN: {fileID: 1458480200}
     prevBTN: {fileID: 727085757}
-    currentIndex: 0
   pantTypes:
     pantParts:
     - {fileID: 1464849107}
@@ -1816,7 +1815,7 @@ MonoBehaviour:
     - {fileID: 1464849105}
     nextBTN: {fileID: 918424255}
     prevBTN: {fileID: 428815862}
-    currentIndex: 0
+  currentIndex: 0
 --- !u!114 &1223869979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2213,27 +2212,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100052, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100054, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100056, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100060, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100062, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100068, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
@@ -2241,11 +2240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100070, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100076, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100078, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive

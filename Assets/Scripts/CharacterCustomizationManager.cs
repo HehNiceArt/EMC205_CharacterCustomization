@@ -16,10 +16,11 @@ public class CharacterCustomizationManager : Editor
         if (GUILayout.Button("NEXT HAIR STYLE"))
         {
             gameManager.NextHair();
+
         }
         if (GUILayout.Button("PREVIOUS HAIR STYLE"))
         {
-            gameManager.PreviousButton();
+            gameManager.PreviousHair();
         }
         GUILayout.Space(5);
         if (GUILayout.Button("RESET HIDDEN GAMEOBJECTS"))

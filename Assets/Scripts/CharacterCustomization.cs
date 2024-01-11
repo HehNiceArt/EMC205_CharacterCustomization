@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,29 +17,60 @@ public class CharacterCustomization : MonoBehaviour
         public GameObject[] hairParts;
         public Button nextBTN;
         public Button prevBTN;
-        public int currentIndex;
-
-        public int CurrentIndex
+        //why is this not incrementing
+        public int currentIndex = 0;
+        public void HairIncrement()
         {
-            get { return currentIndex; } 
-            set { currentIndex = (value + hairParts.Length) % hairParts.Length; }
+            currentIndex = currentIndex + 1;
+            if (currentIndex > hairParts.Length)
+            {
+                currentIndex = 0;
+            }
+        }
+        public void HairDecrement()
+        {
+            currentIndex = currentIndex - 1;
+            if (currentIndex <= -1)
+            {
+                currentIndex = hairParts.Length;
+            }
         }
     }
+    
     [System.Serializable]
     public class ClotheTypeDatas
     {
         public GameObject[] clothesParts;
-        [SerializeField] private Button nextBTN;
-        [SerializeField] private Button prevBTN;
-        [SerializeField] private int currentIndex;
+        public Button nextBTN;
+        public Button prevBTN;
+        public int currentIndex;
+
+        public void ClotheIncrement()
+        {
+            currentIndex = currentIndex + 1;
+            //Debug.Log(clothesParts.Length);
+            if(currentIndex >= clothesParts.Length)
+            {
+                currentIndex = 0;
+            }
+        }
+        public void ClotheDecrement()
+        {
+            currentIndex = currentIndex - 1;
+            if (currentIndex <= -1)
+            {
+                currentIndex = clothesParts.Length - 1;
+            }
+        }
     }
     [System.Serializable]
     public class PantTypeDatas
     {
         public GameObject[] pantParts;
-        [SerializeField] private Button nextBTN;
-        [SerializeField] private Button prevBTN;
-        [SerializeField] private int currentIndex;
+        public Button nextBTN;
+        public Button prevBTN;
+        public int currentIndex;
+
     }
 
 }
