@@ -1930,6 +1930,7 @@ MonoBehaviour:
     nextBTN: {fileID: 1458480200}
     prevBTN: {fileID: 727085757}
     currentIndex: 0
+    gameManager: {fileID: 1223869979}
   kiraPantTypes:
     pantParts:
     - {fileID: 1464849107}
@@ -1938,6 +1939,8 @@ MonoBehaviour:
     nextBTN: {fileID: 918424255}
     prevBTN: {fileID: 428815862}
     currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  kiraPrefab: {fileID: 344429059}
   liamHairTypes:
     hairParts:
     - {fileID: 1721766468}
@@ -1950,14 +1953,16 @@ MonoBehaviour:
     nextBTN: {fileID: 1049954545}
     prevBTN: {fileID: 1807020284}
     currentIndex: 0
+    gameManager: {fileID: 1223869979}
   liamClotheTypes:
     clotheParts:
     - {fileID: 1721766461}
     - {fileID: 1721766460}
     - {fileID: 1721766459}
     nextBTN: {fileID: 1458480200}
-    prevBTN: {fileID: 1807020284}
+    prevBTN: {fileID: 727085757}
     currentIndex: 0
+    gameManager: {fileID: 1223869979}
   liamPantTypes:
     pantParts:
     - {fileID: 1721766458}
@@ -1965,6 +1970,8 @@ MonoBehaviour:
     nextBTN: {fileID: 918424255}
     prevBTN: {fileID: 428815862}
     currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  liamPrefab: {fileID: 1757666866}
 --- !u!114 &1223869979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,7 +2366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100044, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100050, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
@@ -2506,7 +2513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100048, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_Name

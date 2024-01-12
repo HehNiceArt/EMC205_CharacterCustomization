@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using Unity.VisualScripting;
 
 public class CharacterCustomization : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CharacterCustomization : MonoBehaviour
     public KiraHairTypeDatas kiraHairTypes;
     public KiraClotheTypeDatas kiraClotheTypes;
     public KiraPantTypeDatas kiraPantTypes;
+    public GameObject kiraPrefab;
 
     [Space(10)]
 
@@ -18,6 +20,8 @@ public class CharacterCustomization : MonoBehaviour
     public LiamHairTypeDatas liamHairTypes;
     public LiamClotheTypeDatas liamClotheTypes;
     public LiamPantTypeDatas liamPantTypes;
+    public GameObject liamPrefab;
+
 
     #region Kira
     [System.Serializable]
@@ -32,18 +36,12 @@ public class CharacterCustomization : MonoBehaviour
             public void HairIncrement()
             {
                 currentIndex = currentIndex + 1;
-                if (currentIndex > hairParts.Length)
-                {
-                    currentIndex = 0;
-                }
+                if (currentIndex > hairParts.Length) { currentIndex = 0; }
             }
             public void HairDecrement()
             {
                 currentIndex = currentIndex - 1;
-                if (currentIndex <= -1)
-                {
-                    currentIndex = hairParts.Length;
-                }
+                if (currentIndex < 0) { currentIndex = hairParts.Length; }
             }
         }
 
@@ -55,22 +53,23 @@ public class CharacterCustomization : MonoBehaviour
             public Button prevBTN;
             public int currentIndex;
 
+        public GameManager gameManager;
             public void ClotheIncrement()
             {
                 currentIndex = currentIndex + 1;
                 //Debug.Log(clothesParts.Length);
-                if (currentIndex >= clothesParts.Length)
-                {
-                    currentIndex = 0;
-                }
+                if (currentIndex >= clothesParts.Length) { currentIndex = 0;
+                int dummyIndex = 0;
+                gameManager.SetClotheToggle(currentIndex, dummyIndex, true);
+            }
             }
             public void ClotheDecrement()
             {
                 currentIndex = currentIndex - 1;
-                if (currentIndex <= -1)
-                {
-                    currentIndex = clothesParts.Length;
-                }
+                if (currentIndex < 0) { currentIndex = clothesParts.Length - 1;
+                int dummyIndex = 0;
+                gameManager.SetClotheToggle(currentIndex, dummyIndex, true);
+            }
             }
         }
         [System.Serializable]
@@ -81,22 +80,24 @@ public class CharacterCustomization : MonoBehaviour
             public Button prevBTN;
             public int currentIndex;
 
+        public GameManager gameManager;
             public void PantIncrement()
             {
                 currentIndex = currentIndex + 1;
-                if (currentIndex >= pantParts.Length)
-                {
-                    currentIndex = 0;
-                }
+                if (currentIndex >= pantParts.Length) { currentIndex = 0;
+                int dummyIndex = 0;
+                gameManager.SetPantToggle(currentIndex, dummyIndex, true);
+            }
             }
             public void PantDecrement()
             {
                 currentIndex = currentIndex - 1;
-                if (currentIndex <= -1)
-                {
-                    currentIndex = pantParts.Length;
+                if (currentIndex < 0)
+                { currentIndex = pantParts.Length  - 1;
+                int dummyIndex = 0;
+                gameManager.SetPantToggle(currentIndex, dummyIndex, true);
                 }
-        }
+            }
     }
     #endregion
 
@@ -107,7 +108,22 @@ public class CharacterCustomization : MonoBehaviour
         public GameObject[] hairParts;
         public Button nextBTN;
         public Button prevBTN;
-        public int currentIndex;
+        public int currentIndex = 0;
+
+        public GameManager gameManager;
+        public void HairIncrement()
+        {
+            currentIndex = currentIndex + 1;
+            if (currentIndex > hairParts.Length - 1) { currentIndex = 0; 
+                int dummyIndex = 0;
+                gameManager.SetHairToggle(dummyIndex, currentIndex, true);
+            }
+        }
+        public void HairDecrement()
+        {
+            currentIndex -= 1;
+            if(currentIndex == -1) { currentIndex = hairParts.Length;}
+        }
     }
     [System.Serializable]
     public class LiamClotheTypeDatas
@@ -116,6 +132,28 @@ public class CharacterCustomization : MonoBehaviour
         public Button nextBTN;
         public Button prevBTN;
         public int currentIndex;
+
+        public GameManager gameManager;
+        public void ClotheIncrement()
+        {
+            currentIndex = currentIndex + 1;
+            if(currentIndex >= clotheParts.Length) { currentIndex = 0; }
+            Debug.Log("A");
+        }
+        public void ClotheDecrement()
+        {
+            currentIndex = currentIndex - 1;
+            int dummyIndex = 0;
+            Debug.Log("B");
+            if(currentIndex <= -1) { currentIndex = clotheParts.Length - 1;
+                //I forgot the logic on why I wrote this when I was writing it but it works
+                //Got it now - when the currentIndex reaches -1, it will loop back to 
+                //the max length of the gameobject array - 1 so it's only [0,1,2]
+                //Instead of having an extra number i.e. [0,1,2,3]
+                //So the solution was to run SetClotheToggle again
+                gameManager.SetClotheToggle(dummyIndex, currentIndex, true);
+            }
+        }
     }
     [System.Serializable]
     public class LiamPantTypeDatas
@@ -124,6 +162,21 @@ public class CharacterCustomization : MonoBehaviour
         public Button nextBTN;
         public Button prevBTN;
         public int currentIndex;
+
+        public GameManager gameManager;
+        public void PantIncrement()
+        {
+            currentIndex = currentIndex + 1;
+            if (currentIndex >= pantParts.Length) { currentIndex = 0; }
+        }
+        public void PantDecrement()
+        {
+            currentIndex = currentIndex - 1;
+            if (currentIndex < 0) { currentIndex = pantParts.Length - 1;
+                int dummyIndex = 0;
+                gameManager.SetPantToggle(dummyIndex, currentIndex, true);
+            }
+        }
     }
     #endregion
 }
