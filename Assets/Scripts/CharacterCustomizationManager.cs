@@ -13,16 +13,7 @@ public class CharacterCustomizationManager : Editor
         DrawDefaultInspector();
         GameManager gameManager = (GameManager)target;
 
-        if (GUILayout.Button("NEXT HAIR STYLE"))
-        {
-            gameManager.NextHair();
-
-        }
-        if (GUILayout.Button("PREVIOUS HAIR STYLE"))
-        {
-            gameManager.PreviousHair();
-        }
-        GUILayout.Space(5);
+        GUILayout.Space(15);
         if (GUILayout.Button("RESET HIDDEN GAMEOBJECTS"))
         {
             gameManager.ResetHidden();
