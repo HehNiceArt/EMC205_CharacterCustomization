@@ -613,6 +613,49 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1680521515}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &344429062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344429059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf333499311eaa458a4f72d73fa9870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kiraHairTypes:
+    hairParts:
+    - {fileID: 1680521522}
+    - {fileID: 1680521521}
+    - {fileID: 1680521520}
+    - {fileID: 1680521519}
+    - {fileID: 1680521518}
+    - {fileID: 1680521517}
+    - {fileID: 1680521516}
+    nextBTN: {fileID: 1049954545}
+    prevBTN: {fileID: 1807020284}
+    currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  kiraClotheTypes:
+    clothesParts:
+    - {fileID: 1464849109}
+    - {fileID: 1464849108}
+    nextBTN: {fileID: 1458480200}
+    prevBTN: {fileID: 727085757}
+    currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  kiraPantTypes:
+    pantParts:
+    - {fileID: 1464849107}
+    - {fileID: 1464849106}
+    - {fileID: 1464849105}
+    nextBTN: {fileID: 918424255}
+    prevBTN: {fileID: 428815862}
+    currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  kiraPrefab: {fileID: 344429059}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,7 +1918,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1223869977}
-  - component: {fileID: 1223869978}
   - component: {fileID: 1223869979}
   m_Layer: 0
   m_Name: GameManager
@@ -1899,79 +1941,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1223869978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223869976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf333499311eaa458a4f72d73fa9870, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kiraHairTypes:
-    hairParts:
-    - {fileID: 1680521522}
-    - {fileID: 1680521521}
-    - {fileID: 1680521520}
-    - {fileID: 1680521519}
-    - {fileID: 1680521518}
-    - {fileID: 1680521517}
-    - {fileID: 1680521516}
-    nextBTN: {fileID: 1049954545}
-    prevBTN: {fileID: 1807020284}
-    currentIndex: 0
-  kiraClotheTypes:
-    clothesParts:
-    - {fileID: 1464849109}
-    - {fileID: 1464849108}
-    nextBTN: {fileID: 1458480200}
-    prevBTN: {fileID: 727085757}
-    currentIndex: 0
-    gameManager: {fileID: 1223869979}
-  kiraPantTypes:
-    pantParts:
-    - {fileID: 1464849107}
-    - {fileID: 1464849106}
-    - {fileID: 1464849105}
-    nextBTN: {fileID: 918424255}
-    prevBTN: {fileID: 428815862}
-    currentIndex: 0
-    gameManager: {fileID: 1223869979}
-  kiraPrefab: {fileID: 344429059}
-  liamHairTypes:
-    hairParts:
-    - {fileID: 1721766468}
-    - {fileID: 1721766467}
-    - {fileID: 1721766466}
-    - {fileID: 1721766465}
-    - {fileID: 1721766464}
-    - {fileID: 1721766463}
-    - {fileID: 1721766462}
-    nextBTN: {fileID: 1807020284}
-    prevBTN: {fileID: 1807020284}
-    currentIndex: 0
-    gameManager: {fileID: 1223869979}
-  liamClotheTypes:
-    clotheParts:
-    - {fileID: 1721766461}
-    - {fileID: 1721766460}
-    - {fileID: 1721766459}
-    nextBTN: {fileID: 1458480200}
-    prevBTN: {fileID: 727085757}
-    currentIndex: 0
-    gameManager: {fileID: 1223869979}
-  liamPantTypes:
-    pantParts:
-    - {fileID: 1721766458}
-    - {fileID: 1721766457}
-    nextBTN: {fileID: 918424255}
-    prevBTN: {fileID: 428815862}
-    currentIndex: 0
-    gameManager: {fileID: 1223869979}
-  liamPrefab: {fileID: 1757666866}
 --- !u!114 &1223869979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,7 +1953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58bf9053ca4b5448b2c352312a7ef1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charCustom: {fileID: 1223869978}
+  kiracustom: {fileID: 344429062}
+  liamcustom: {fileID: 1757666869}
   kiraPrefab: {fileID: 344429059}
   liamPrefab: {fileID: 1757666866}
   switchSex: {fileID: 1221438246}
@@ -2455,7 +2425,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100044, guid: 535156c74f90dde48be444746515be0d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344429062}
   m_SourcePrefab: {fileID: 100100000, guid: 535156c74f90dde48be444746515be0d, type: 3}
 --- !u!1 &1680521516 stripped
 GameObject:
@@ -2626,7 +2600,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100046, guid: 2aa49f5484494544aab36119827b19bc,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1757666869}
   m_SourcePrefab: {fileID: 100100000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
 --- !u!1 &1721766457 stripped
 GameObject:
@@ -2706,6 +2684,49 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1721766456}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1757666869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757666866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec86577af6d5ea42b4d27518e1100dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  liamHairTypes:
+    hairParts:
+    - {fileID: 1721766468}
+    - {fileID: 1721766467}
+    - {fileID: 1721766466}
+    - {fileID: 1721766465}
+    - {fileID: 1721766464}
+    - {fileID: 1721766463}
+    - {fileID: 1721766462}
+    nextBTN: {fileID: 1049954545}
+    prevBTN: {fileID: 1807020284}
+    currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  liamClotheTypes:
+    clotheParts:
+    - {fileID: 1721766461}
+    - {fileID: 1721766460}
+    - {fileID: 1721766459}
+    nextBTN: {fileID: 1458480200}
+    prevBTN: {fileID: 727085757}
+    currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  liamPantTypes:
+    pantParts:
+    - {fileID: 1721766458}
+    - {fileID: 1721766457}
+    nextBTN: {fileID: 918424255}
+    prevBTN: {fileID: 428815862}
+    currentIndex: 0
+    gameManager: {fileID: 1223869979}
+  liamPrefab: {fileID: 1757666866}
 --- !u!1 &1783505781
 GameObject:
   m_ObjectHideFlags: 0

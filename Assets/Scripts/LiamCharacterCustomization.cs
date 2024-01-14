@@ -6,109 +6,13 @@ using UnityEngine.UI;
 using UnityEditor;
 using Unity.VisualScripting;
 
-public class CharacterCustomization : MonoBehaviour
+public class LiamCharacterCustomization : MonoBehaviour
 {
-    [Header("KIRA MODEL")]
-    public KiraHairTypeDatas kiraHairTypes;
-    public KiraClotheTypeDatas kiraClotheTypes;
-    public KiraPantTypeDatas kiraPantTypes;
-    public GameObject kiraPrefab;
-
-    [Space(10)]
-
     [Header("LIAM MODEL")]
     public LiamHairTypeDatas liamHairTypes;
     public LiamClotheTypeDatas liamClotheTypes;
     public LiamPantTypeDatas liamPantTypes;
     public GameObject liamPrefab;
-
-
-    #region Kira
-    [System.Serializable]
-    public class KiraHairTypeDatas
-        {
-            //public so it makes it readable on HideExcessPart()
-            public GameObject[] hairParts;
-            public Button nextBTN;
-            public Button prevBTN;
-            public int currentIndex = 0;
-            public void HairIncrement()
-            {
-                currentIndex = currentIndex + 1;
-                if (currentIndex > hairParts.Length) { currentIndex = 0; }
-            }
-            public void HairDecrement()
-            {
-                currentIndex = currentIndex - 1;
-                if (currentIndex < 0) { currentIndex = hairParts.Length; }
-            }
-        }
-
-    [System.Serializable]
-    public class KiraClotheTypeDatas
-    {
-        public GameObject[] clothesParts;
-        public Button nextBTN;
-        public Button prevBTN;
-        public int currentIndex;
-        public GameManager gameManager;
-       
-        public void ClotheIncrement()
-        {
-            currentIndex = currentIndex + 1;
-            //Debug.Log(clothesParts.Length);
-            if (currentIndex >= clothesParts.Length) 
-            { 
-                currentIndex = 0;
-                int dummyIndex = 0;
-                gameManager.SetClotheToggle(currentIndex, dummyIndex, true);
-            }
-        }
-        public void ClotheDecrement()
-        {
-            currentIndex = currentIndex - 1;
-            if (currentIndex < 0) 
-            { 
-                currentIndex = clothesParts.Length - 1;
-                int dummyIndex = 0;
-                gameManager.SetClotheToggle(currentIndex, dummyIndex, true);
-            }
-        }
-    }
-
-    [System.Serializable]
-   public class KiraPantTypeDatas
-   {
-           
-        public GameObject[] pantParts;
-        public Button nextBTN;
-        public Button prevBTN;
-        public int currentIndex;
-
-        public GameManager gameManager;
-        
-        public void PantIncrement()
-        {
-            currentIndex = currentIndex + 1;
-            if (currentIndex >= pantParts.Length) 
-            {
-                currentIndex = 0;
-                int dummyIndex = 0;
-                gameManager.SetPantToggle(currentIndex, dummyIndex, true);
-            }
-        }
-        public void PantDecrement()
-        {
-            currentIndex = currentIndex - 1;
-            if (currentIndex < 0)
-            { 
-                currentIndex = pantParts.Length  - 1;
-                int dummyIndex = 0;
-                gameManager.SetPantToggle(currentIndex, dummyIndex, true);
-            }
-        }
-    }
-    #endregion
 
     #region Liam
     [System.Serializable]

@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public CharacterCustomization charCustom;
+    public KiraCharacterCustomization kiracustom;
+    public LiamCharacterCustomization liamcustom;
     public GameObject kiraPrefab;
     public GameObject liamPrefab;
     public Button switchSex;
@@ -18,70 +19,86 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         HideExcessPart();
-        liamPrefab.SetActive(false);
         Button changeSex = switchSex;
         changeSex.onClick.AddListener(SwitchSex);
+        Initialize();
+    }
+    void SwapModel()
+    {
+
+    }
+    private void Initialize()
+    {
         #region Kira
         if (kiraPrefab.activeInHierarchy)
         {
-            Button kiraHairNextBTN = charCustom.kiraHairTypes.nextBTN;
+            Button kiraHairNextBTN = kiracustom.kiraHairTypes.nextBTN;
             kiraHairNextBTN.onClick.AddListener(NextHair);
-            kiraHairNextBTN.onClick.AddListener(charCustom.kiraHairTypes.HairIncrement);
+            kiraHairNextBTN.onClick.AddListener(kiracustom.kiraHairTypes.HairIncrement);
 
-            Button kiraHairPreviousBTN = charCustom.kiraHairTypes.prevBTN;
+            Button kiraHairPreviousBTN = kiracustom.kiraHairTypes.prevBTN;
             kiraHairPreviousBTN.onClick.AddListener(PreviousHair);
-            kiraHairPreviousBTN.onClick.AddListener(charCustom.kiraHairTypes.HairDecrement);
+            kiraHairPreviousBTN.onClick.AddListener(kiracustom.kiraHairTypes.HairDecrement);
 
-            Button kiraClothesNextBTN = charCustom.kiraClotheTypes.nextBTN;
+            Button kiraClothesNextBTN = kiracustom.kiraClotheTypes.nextBTN;
             kiraClothesNextBTN.onClick.AddListener(NextClothe);
-            kiraClothesNextBTN.onClick.AddListener(charCustom.kiraClotheTypes.ClotheIncrement);
+            kiraClothesNextBTN.onClick.AddListener(kiracustom.kiraClotheTypes.ClotheIncrement);
 
-            Button kiraClothesPreviousBTN = charCustom.kiraClotheTypes.prevBTN;
+            Button kiraClothesPreviousBTN = kiracustom.kiraClotheTypes.prevBTN;
             kiraClothesPreviousBTN.onClick.AddListener(PreviousClothe);
-            kiraClothesPreviousBTN.onClick.AddListener(charCustom.kiraClotheTypes.ClotheDecrement);
+            kiraClothesPreviousBTN.onClick.AddListener(kiracustom.kiraClotheTypes.ClotheDecrement);
 
-            Button kiraPantNextBTN = charCustom.kiraPantTypes.nextBTN;
+            Button kiraPantNextBTN = kiracustom.kiraPantTypes.nextBTN;
             kiraPantNextBTN.onClick.AddListener(NextPant);
-            kiraPantNextBTN.onClick.AddListener(charCustom.kiraPantTypes.PantIncrement); ;
+            kiraPantNextBTN.onClick.AddListener(kiracustom.kiraPantTypes.PantIncrement); ;
 
-            Button kiraPantPreviousBTN = charCustom.kiraPantTypes.prevBTN;
+            Button kiraPantPreviousBTN = kiracustom.kiraPantTypes.prevBTN;
             kiraPantPreviousBTN.onClick.AddListener(PreviousPant);
-            kiraPantPreviousBTN.onClick.AddListener(charCustom.kiraPantTypes.PantDecrement); ;
+            kiraPantPreviousBTN.onClick.AddListener(kiracustom.kiraPantTypes.PantDecrement); ;
         }
         #endregion
         #region Liam
         if (liamPrefab.activeInHierarchy)
         {
-            Button liamHairNextBTN = charCustom.liamHairTypes.nextBTN;
+            Button liamHairNextBTN = liamcustom.liamHairTypes.nextBTN;
             liamHairNextBTN.onClick.AddListener(NextHair);
-            liamHairNextBTN.onClick.AddListener(charCustom.liamHairTypes.HairIncrement);
+            liamHairNextBTN.onClick.AddListener(liamcustom.liamHairTypes.HairIncrement);
 
-            Button liamHairPreviousBTN = charCustom.liamHairTypes.prevBTN;
+            Button liamHairPreviousBTN = liamcustom.liamHairTypes.prevBTN;
             liamHairPreviousBTN.onClick.AddListener(PreviousHair);
-            liamHairPreviousBTN.onClick.AddListener(charCustom.liamHairTypes.HairDecrement);
+            liamHairPreviousBTN.onClick.AddListener(liamcustom.liamHairTypes.HairDecrement);
 
-            Button liamClotheNextBTN = charCustom.liamClotheTypes.nextBTN;
+            Button liamClotheNextBTN = liamcustom.liamClotheTypes.nextBTN;
             liamClotheNextBTN.onClick.AddListener(NextClothe);
-            liamClotheNextBTN.onClick.AddListener(charCustom.liamClotheTypes.ClotheIncrement);
+            liamClotheNextBTN.onClick.AddListener(liamcustom.liamClotheTypes.ClotheIncrement);
 
-            Button liamClothePreviousBTN = charCustom.liamClotheTypes.prevBTN;
+            Button liamClothePreviousBTN = liamcustom.liamClotheTypes.prevBTN;
             liamClothePreviousBTN.onClick.AddListener(PreviousClothe);
-            liamClothePreviousBTN.onClick.AddListener(charCustom.liamClotheTypes.ClotheDecrement);
+            liamClothePreviousBTN.onClick.AddListener(liamcustom.liamClotheTypes.ClotheDecrement);
 
-            Button liamPantNextBTN = charCustom.liamPantTypes.nextBTN;
+            Button liamPantNextBTN = liamcustom.liamPantTypes.nextBTN;
             liamPantNextBTN.onClick.AddListener(NextPant);
-            liamPantNextBTN.onClick.AddListener(charCustom.liamPantTypes.PantIncrement);
+            liamPantNextBTN.onClick.AddListener(liamcustom.liamPantTypes.PantIncrement);
 
-            Button liamPantPreviousBTN = charCustom.liamPantTypes.prevBTN;
+            Button liamPantPreviousBTN = liamcustom.liamPantTypes.prevBTN;
             liamPantPreviousBTN.onClick.AddListener(PreviousPant);
-            liamPantPreviousBTN.onClick.AddListener(charCustom.liamPantTypes.PantDecrement);
+            liamPantPreviousBTN.onClick.AddListener(liamcustom.liamPantTypes.PantDecrement);
         }
         #endregion
+        
+    }
+    bool isGameObjectActive = true;
+    public void SwitchSex()
+    {
+        isGameObjectActive = !isGameObjectActive;
+        SetActiveObject();
+    }
+    void SetActiveObject()
+    {
+        kiraPrefab.SetActive(isGameObjectActive);
+        liamPrefab.SetActive(!isGameObjectActive);
     }
 
-    private void Update()
-    {
-    }
     #region For Inspector Only
     //Resets the visibility of the children models
     public void ResetHidden()
@@ -93,23 +110,23 @@ public class GameManager : MonoBehaviour
     public void HideExcessPart()
     {
         #region Kira
-        int kiraHairPartsLength = charCustom.kiraHairTypes.hairParts.Length;
-        int kiraClothePartsLength = charCustom.kiraClotheTypes.clothesParts.Length;
-        int kiraPantPartsLength = charCustom.kiraPantTypes.pantParts.Length;
-        GameObject[] kiraHairParts = charCustom.kiraHairTypes.hairParts;
-        GameObject[] kiraClotheParts = charCustom.kiraClotheTypes.clothesParts;
-        GameObject[] kiraPantParts = charCustom.kiraPantTypes.pantParts;
+        int kiraHairPartsLength = kiracustom.kiraHairTypes.hairParts.Length;
+        int kiraClothePartsLength = kiracustom.kiraClotheTypes.clothesParts.Length;
+        int kiraPantPartsLength = kiracustom.kiraPantTypes.pantParts.Length;
+        GameObject[] kiraHairParts = kiracustom.kiraHairTypes.hairParts;
+        GameObject[] kiraClotheParts = kiracustom.kiraClotheTypes.clothesParts;
+        GameObject[] kiraPantParts = kiracustom.kiraPantTypes.pantParts;
         for (int i = 1; i < kiraHairPartsLength; i++) { kiraHairParts[i].SetActive(false); }
         for (int i = 1; i < kiraClothePartsLength; i++) { kiraClotheParts[i].SetActive(false); }
         for (int i = 1; i < kiraPantPartsLength; i++) { kiraPantParts[i].SetActive(false); }
         #endregion
         #region Liam
-        int liamHairPartsLength = charCustom.liamHairTypes.hairParts.Length;
-        int liamClothePartsLength = charCustom.liamClotheTypes.clotheParts.Length;
-        int liamPantPartsLength = charCustom.liamPantTypes.pantParts.Length;
-        GameObject[] liamHairParts = charCustom.liamHairTypes.hairParts;
-        GameObject[] liamClotheParts = charCustom.liamClotheTypes.clotheParts;
-        GameObject[] liamPantParts = charCustom.liamPantTypes.pantParts;
+        int liamHairPartsLength = liamcustom.liamHairTypes.hairParts.Length;
+        int liamClothePartsLength = liamcustom.liamClotheTypes.clotheParts.Length;
+        int liamPantPartsLength = liamcustom.liamPantTypes.pantParts.Length;
+        GameObject[] liamHairParts = liamcustom.liamHairTypes.hairParts;
+        GameObject[] liamClotheParts = liamcustom.liamClotheTypes.clotheParts;
+        GameObject[] liamPantParts = liamcustom.liamPantTypes.pantParts;
         for(int i = 0; i < liamHairPartsLength; i++) { liamHairParts[i].SetActive(false); }
         for(int i = 0;i < liamClothePartsLength; i++) { liamClotheParts[i].SetActive(false); }
         for(int i = 0; i < liamPantPartsLength; i++) { liamPantParts[i].SetActive(false); }
@@ -120,8 +137,8 @@ public class GameManager : MonoBehaviour
     #region Customization Functions
     public void NextHair()
     {
-        int kiraIndex = charCustom.kiraHairTypes.currentIndex;
-        int liamIndex = charCustom.liamHairTypes.currentIndex;
+        int kiraIndex = kiracustom.kiraHairTypes.currentIndex;
+        int liamIndex = liamcustom.liamHairTypes.currentIndex;
         //Deactivates current visible hair
         SetHairToggle(kiraIndex, false);
         SetLiamHairToggle(liamIndex, false);
@@ -134,8 +151,8 @@ public class GameManager : MonoBehaviour
     }
     public void PreviousHair()
     {
-        int kiraIndex = charCustom.kiraHairTypes.currentIndex;
-        int liamIndex = charCustom.kiraHairTypes.currentIndex;
+        int kiraIndex = kiracustom.kiraHairTypes.currentIndex;
+        int liamIndex = liamcustom.liamHairTypes.currentIndex;
         SetHairToggle(kiraIndex, false);
         SetHairToggle(liamIndex, false);
         kiraIndex--;
@@ -145,8 +162,8 @@ public class GameManager : MonoBehaviour
     }
     public void NextClothe()
     {
-        int kiraIndex = charCustom.kiraClotheTypes.currentIndex;
-        int liamIndex = charCustom.liamClotheTypes.currentIndex;
+        int kiraIndex = kiracustom.kiraClotheTypes.currentIndex;
+        int liamIndex = liamcustom.liamClotheTypes.currentIndex;
         SetClotheToggle(kiraIndex, liamIndex, false);
         //SetClotheToggle(index, false);
         kiraIndex++;
@@ -155,8 +172,8 @@ public class GameManager : MonoBehaviour
     }
     public void PreviousClothe()
     {
-        int kiraIndex = charCustom.kiraClotheTypes.currentIndex;
-        int liamIndex = charCustom.liamClotheTypes.currentIndex;
+        int kiraIndex = kiracustom.kiraClotheTypes.currentIndex;
+        int liamIndex = liamcustom.liamClotheTypes.currentIndex;
         SetClotheToggle(kiraIndex, liamIndex, false);
         //SetClotheToggle(index);
         kiraIndex--;
@@ -165,8 +182,8 @@ public class GameManager : MonoBehaviour
     }
     public void NextPant()
     {
-        int kiraIndex = charCustom.kiraPantTypes.currentIndex;
-        int liamIndex = charCustom.liamPantTypes.currentIndex;
+        int kiraIndex = kiracustom.kiraPantTypes.currentIndex;
+        int liamIndex = liamcustom.liamPantTypes.currentIndex;
         SetPantToggle(kiraIndex, liamIndex, false);
         kiraIndex++;
         liamIndex++ ;   
@@ -174,8 +191,8 @@ public class GameManager : MonoBehaviour
     }
     public void PreviousPant()
     {
-        int kiraIndex = charCustom.kiraPantTypes.currentIndex;
-        int liamIndex = charCustom.liamPantTypes.currentIndex;
+        int kiraIndex = kiracustom.kiraPantTypes.currentIndex;
+        int liamIndex = liamcustom.liamPantTypes.currentIndex;
         SetPantToggle(kiraIndex,liamIndex, false);
         kiraIndex--;
         liamIndex-- ;
@@ -190,23 +207,20 @@ public class GameManager : MonoBehaviour
     #region Toggles
     public void SetHairToggle(int kiraIndex, bool isActive)
     {
-        int kiraHairLength = charCustom.kiraHairTypes.hairParts.Length;
-        GameObject[] kiraHairParts = charCustom.kiraHairTypes.hairParts;
+        int kiraHairLength = kiracustom.kiraHairTypes.hairParts.Length;
+        GameObject[] kiraHairParts = kiracustom.kiraHairTypes.hairParts;
             if (kiraIndex >= 0 && kiraIndex < kiraHairLength)
             {
                 for (int i = 0; i <= kiraHairLength; i++)
                     kiraHairParts[kiraIndex].SetActive(isActive);
             }
-            if ((kiraIndex == kiraHairLength) || kiraIndex == 0) { kiraHairParts[0].SetActive(true); }
-            else { kiraHairParts[0].SetActive(false); }
-
-            //Debug.Log("TOGGLE: " + liamIndex);
+            if (!isActive && (kiraIndex == kiraHairLength)) { kiraHairParts[0].SetActive(true); }
            
     } 
     public void SetLiamHairToggle(int liamIndex, bool isActive)
     {
-        int liamHairLength = charCustom.liamHairTypes.hairParts.Length;
-        GameObject[] liamHairParts = charCustom.liamHairTypes.hairParts;
+        int liamHairLength = liamcustom.liamHairTypes.hairParts.Length;
+        GameObject[] liamHairParts = liamcustom.liamHairTypes.hairParts;
 
         if (liamIndex >= 0 && liamIndex < liamHairLength)
         {
@@ -217,36 +231,17 @@ public class GameManager : MonoBehaviour
     }
     public void SetClotheToggle(int kiraIndex, int liamIndex, bool isActive)
     {
-        int kiraClotheLength = charCustom.kiraClotheTypes.clothesParts.Length;
-        GameObject[] kiraClotheParts = charCustom.kiraClotheTypes.clothesParts;
+        int kiraClotheLength = kiracustom.kiraClotheTypes.clothesParts.Length;
+        GameObject[] kiraClotheParts = kiracustom.kiraClotheTypes.clothesParts;
 
-        int liamClotheLength = charCustom.liamClotheTypes.clotheParts.Length;
-        GameObject[] liamClotheParts = charCustom.liamClotheTypes.clotheParts;
+        int liamClotheLength = liamcustom.liamClotheTypes.clotheParts.Length;
+        GameObject[] liamClotheParts = liamcustom.liamClotheTypes.clotheParts;
 
             if (kiraIndex >= 0 && kiraIndex < kiraClotheLength)
             {
                 for (int i = 0; i < kiraClotheLength; i++)
                     kiraClotheParts[kiraIndex].SetActive(isActive);
                 if(!isActive && (kiraIndex == kiraClotheLength)) { kiraClotheParts[0].SetActive(true);}
-            #region Deprecated  
-            //Not the best condition right now but I can't find any other code that
-            //functions similarly with just two models
-            //switch (kiraIndex)
-            //{
-            //    case 0:
-            //        kiraClotheParts[0].SetActive(true);
-            //        kiraClotheParts[1].SetActive(false);
-            //        //Debug.Log("CASE 0");
-            //        break;
-            //    case 1:
-            //        kiraClotheParts[0].SetActive(false);
-            //        kiraClotheParts[1].SetActive(true);
-            //        //Debug.Log("CASE 1");
-            //        break;
-            //    default:
-            //        break;
-            //}
-            #endregion
             }
 
             if (liamIndex >= 0 && liamIndex < liamClotheLength)
@@ -262,11 +257,11 @@ public class GameManager : MonoBehaviour
 /// </summary>
     public void SetPantToggle(int kiraIndex, int liamIndex, bool isActive)
     {
-        int kiraPantLength = charCustom.kiraPantTypes.pantParts.Length;
-        GameObject[] kiraPantParts = charCustom.kiraPantTypes.pantParts;
+        int kiraPantLength = kiracustom.kiraPantTypes.pantParts.Length;
+        GameObject[] kiraPantParts = kiracustom.kiraPantTypes.pantParts;
 
-        int liamPantLength = charCustom.liamPantTypes.pantParts.Length;
-        GameObject[] liamPantParts = charCustom.liamPantTypes.pantParts;
+        int liamPantLength = liamcustom.liamPantTypes.pantParts.Length;
+        GameObject[] liamPantParts = liamcustom.liamPantTypes.pantParts;
 
             if (kiraIndex >= 0 && kiraIndex < kiraPantLength)
             {
@@ -286,17 +281,4 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    bool isGameObjectActive = true;
-    public void SwitchSex()
-    {
-        isGameObjectActive = !isGameObjectActive;
-        SetActiveObject();
-    }
-    void SetActiveObject()
-    {
-        kiraPrefab.SetActive(isGameObjectActive);
-       // kiraCanvas.SetActive(isGameObjectActive);
-        liamPrefab.SetActive(!isGameObjectActive);
-        //liamCanvas.SetActive(!isGameObjectActive);
-    }
 }
