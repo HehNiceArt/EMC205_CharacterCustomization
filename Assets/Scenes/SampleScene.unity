@@ -1950,7 +1950,7 @@ MonoBehaviour:
     - {fileID: 1721766464}
     - {fileID: 1721766463}
     - {fileID: 1721766462}
-    nextBTN: {fileID: 1049954545}
+    nextBTN: {fileID: 1807020284}
     prevBTN: {fileID: 1807020284}
     currentIndex: 0
     gameManager: {fileID: 1223869979}
@@ -2366,7 +2366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100044, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100050, guid: 535156c74f90dde48be444746515be0d, type: 3}
       propertyPath: m_IsActive
