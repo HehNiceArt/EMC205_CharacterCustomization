@@ -5,13 +5,13 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(GameManager)), CanEditMultipleObjects]
+[CustomEditor(typeof(KiraGameManager)), CanEditMultipleObjects]
 public class CharacterCustomizationManager : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
-        GameManager gameManager = (GameManager)target;
+        KiraGameManager gameManager = (KiraGameManager)target;
 
         GUILayout.Space(15);
         if (GUILayout.Button("RESET HIDDEN GAMEOBJECTS"))

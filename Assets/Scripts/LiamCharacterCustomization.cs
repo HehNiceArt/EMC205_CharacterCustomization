@@ -23,7 +23,7 @@ public class LiamCharacterCustomization : MonoBehaviour
         public Button prevBTN;
         public int currentIndex;
 
-        public GameManager gameManager;
+        public LiamGameManager gameManager;
         public void HairIncrement()
         {
             currentIndex = currentIndex + 1;
@@ -56,7 +56,7 @@ public class LiamCharacterCustomization : MonoBehaviour
         public Button prevBTN;
         public int currentIndex;
 
-        public GameManager gameManager;
+        public LiamGameManager gameManager;
         public void ClotheIncrement()
         {
             currentIndex = currentIndex + 1;
@@ -65,7 +65,6 @@ public class LiamCharacterCustomization : MonoBehaviour
         public void ClotheDecrement()
         {
             currentIndex = currentIndex - 1;
-            int dummyIndex = 0;
             if(currentIndex <= -1) 
             { 
                 currentIndex = clotheParts.Length - 1;
@@ -74,7 +73,7 @@ public class LiamCharacterCustomization : MonoBehaviour
                 //the max length of the gameobject array - 1 so it's only [0,1,2]
                 //Instead of having an extra number i.e. [0,1,2,3]
                 //So the solution was to run SetClotheToggle again
-                gameManager.SetClotheToggle(dummyIndex, currentIndex, true);
+                gameManager.SetClotheToggle(currentIndex, true);
             }
         }
     }
@@ -86,7 +85,7 @@ public class LiamCharacterCustomization : MonoBehaviour
         public Button prevBTN;
         public int currentIndex;
 
-        public GameManager gameManager;
+        public LiamGameManager gameManager;
         public void PantIncrement()
         {
             currentIndex = currentIndex + 1;
@@ -98,8 +97,7 @@ public class LiamCharacterCustomization : MonoBehaviour
             if (currentIndex < 0) 
             { 
                 currentIndex = pantParts.Length - 1;
-                int dummyIndex = 0;
-                gameManager.SetPantToggle(dummyIndex, currentIndex, true);
+                gameManager.SetPantToggle(currentIndex, true);
             }
         }
     }

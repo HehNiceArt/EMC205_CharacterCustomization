@@ -22,7 +22,7 @@ public class KiraCharacterCustomization : MonoBehaviour
         public Button nextBTN;
         public Button prevBTN;
         public int currentIndex;
-        public GameManager gameManager;
+        public KiraGameManager gameManager;
         public void HairIncrement()
         {
             currentIndex = currentIndex + 1;
@@ -52,7 +52,7 @@ public class KiraCharacterCustomization : MonoBehaviour
         public Button nextBTN;
         public Button prevBTN;
         public int currentIndex;
-        public GameManager gameManager;
+        public KiraGameManager gameManager;
        
         public void ClotheIncrement()
         {
@@ -60,8 +60,7 @@ public class KiraCharacterCustomization : MonoBehaviour
             if (currentIndex >= clothesParts.Length) 
             { 
                 currentIndex = 0;
-                int dummyIndex = 0;
-                gameManager.SetClotheToggle(currentIndex, dummyIndex, true);
+                gameManager.SetClotheToggle(currentIndex, true);
             }
         }
         public void ClotheDecrement()
@@ -70,8 +69,7 @@ public class KiraCharacterCustomization : MonoBehaviour
             if (currentIndex < 0) 
             { 
                 currentIndex = clothesParts.Length - 1;
-                int dummyIndex = 0;
-                gameManager.SetClotheToggle(currentIndex, dummyIndex, true);
+                gameManager.SetClotheToggle(currentIndex, true);
             }
         }
     }
@@ -85,7 +83,7 @@ public class KiraCharacterCustomization : MonoBehaviour
         public Button prevBTN;
         public int currentIndex;
 
-        public GameManager gameManager;
+        public KiraGameManager gameManager;
         
         public void PantIncrement()
         {
@@ -93,8 +91,7 @@ public class KiraCharacterCustomization : MonoBehaviour
             if (currentIndex >= pantParts.Length) 
             {
                 currentIndex = 0;
-                int dummyIndex = 0;
-                gameManager.SetPantToggle(currentIndex, dummyIndex, true);
+                gameManager.SetPantToggle(currentIndex, true);
             }
         }
         public void PantDecrement()
@@ -103,8 +100,7 @@ public class KiraCharacterCustomization : MonoBehaviour
             if (currentIndex < 0)
             { 
                 currentIndex = pantParts.Length  - 1;
-                int dummyIndex = 0;
-                gameManager.SetPantToggle(currentIndex, dummyIndex, true);
+                gameManager.SetPantToggle(currentIndex, true);
             }
         }
     }
